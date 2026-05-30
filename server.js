@@ -1,6 +1,9 @@
-const app = require('./app');
-const { port } = require('./config/env');
+const express = require('express');
+const app = express();
 
-app.listen(port, '127.0.0.1', () => {
-    console.log(`🚀 Serveur Tun-Job-Portal actif sur http://127.0.0.1:${port}`);
+// Render fournit automatiquement la variable d'environnement PORT (par défaut 10000)
+const port = process.env.PORT || 3000; 
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Serveur démarré sur le port ${port}`);
 });
