@@ -2,14 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const multer = require('multer');
-const { frontendUrl } = require('./config/env');
+//const { frontendUrl } = require('./config/env');
 const app = express();
 
 // 1. CONFIGURATION DES SECURITY MIDDLEWARES SÉCURISÉE ET MISE À JOUR
 app.use(cors({
-    origin: [frontendUrl, 'http://localhost:4200', 'http://127.0.0.1:4200'],
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'], 
+    origin: true,
     credentials: true
 }));
 
@@ -32,7 +30,7 @@ const recruiterRoutes = require('./routes/recruiter.routes');
 const adminRoutes = require('./routes/admin.routes'); // 🔑 Chargement des routes d'administration
 const notificationRoutes = require('./routes/notification.routes');
 const publicRoutes = require('./routes/public.routes');
-const publicSharedRoutes = require('./routes/public.routes');
+//const publicSharedRoutes = require('./routes/public.routes');
 
 // Importation des middlewares de protection d'accès
 const { verifyToken, checkRole } = require('./middleware/auth.middleware');
