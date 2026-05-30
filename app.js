@@ -46,7 +46,7 @@ const contactCtrl = require('./controllers/public/contact.controller');
 
 app.get('/api/candidate/jobs/list', candidateJobCtrl.getAllAvailableJobs);
 app.get('/api/candidate/profile/details-public/:id', candidateProfileCtrl.getPublicCompanyDetails);
-app.get('/api/public/jobs/:jobId/quiz', candidateQuizCtrl.getJobQuizForCandidate);
+app.get('/api/public/jobs/:jobId/quiz', candidateQuizCtrl.getJobQuiz);
 
 
 // ip 
